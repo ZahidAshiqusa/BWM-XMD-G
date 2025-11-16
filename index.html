@@ -32,10 +32,10 @@
   <div class="wrapper">
     <div class="logo" id="logo"></div>
     <div class="title">SkillMedic</div>
-    <a href="LINK1" class="neon-btn" data-clr style="--clr:#0ff;"><i class="fa-solid fa-user"></i> Student Portal</a>
-    <a href="LINK2" class="neon-btn" data-clr style="--clr:#f0f;"><i class="fa-solid fa-chalkboard-user"></i> Teacher Portal</a>
-    <a href="LINK3" class="neon-btn" data-clr style="--clr:#ff0;"><i class="fa-solid fa-stethoscope"></i> Doctor Portal</a>
-    <a href="LINK4" class="neon-btn" data-clr style="--clr:#0f0;"><i class="fa-solid fa-gear"></i> Admin Panel</a>
+    <a href="LINK1" class="neon-btn" data-clr style="--clr:#0ff;"><i class="fa-solid fa-user"></i> Admin Portal</a>
+    <a href="LINK2" class="neon-btn" data-clr style="--clr:#f0f;"><i class="fa-solid fa-user"></i> Teacher Portal</a>
+    <a href="LINK3" class="neon-btn" data-clr style="--clr:#ff0;"><i class="fa-solid fa-user"></i> Students Portal</a>
+    <a href="LINK4" class="neon-btn" data-clr style="--clr:#0f0;"><i class="fa-solid fa-user"></i> Girls Portal</a>
   </div>
 </div>
 
@@ -56,7 +56,7 @@
       <button data-num="9">9</button>
       <button id="clearKey">⌫</button>
       <button data-num="0">0</button>
-      <button id="enterKey">✔</button>
+      <button id="enterKey">🔓</button>
     </div>
 
     <div id="pwError" class="error" style="display:none"></div>
@@ -129,31 +129,6 @@ updatePinBox();
 </script>
 </body>
 </html>
-  const pw = input.value.trim();
-    if (!pw) { errEl.textContent = 'Enter the password'; errEl.style.display = 'block'; return; }
-
-    submitBtn.disabled = true; errEl.style.display='none';
-    const result = await checkPassword(pw);
-    submitBtn.disabled = false;
-
-    if (result && result.ok) {
-      sessionStorage.setItem(SESSION_KEY,'1');
-      hideModal();
-    } else {
-      errEl.textContent = result && result.error ? result.error : 'Wrong password';
-      errEl.style.display = 'block';
-    }
-  });
-
-  // cancelBtn: example action to change logo (just demonstration)
-  cancelBtn.addEventListener('click', ()=>{
-    const logo = document.getElementById('logo');
-    const url = prompt('Enter logo URL (or leave blank):');
-    if (url) logo.style.backgroundImage = `url(${url})`;
-  });
-
-  // Allow Enter key
-  input.addEventListener('keydown', (e)=>{ if (e.key === 'Enter') submitBtn.click(); });
 </script>
 </body>
 </html>
